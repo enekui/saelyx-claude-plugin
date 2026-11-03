@@ -1,0 +1,14 @@
+{
+  "name": "saelyx-plugins",
+  "description": "Plugins for Claude from Saelyx.",
+  "owner": {
+    "name": "Saelyx",
+    "url": "https://saelyx.ai"
+  },
+  "plugins": [
+    {
+      "name": "saelyx",
+      "source": "./"
+    }
+  ]
+}
