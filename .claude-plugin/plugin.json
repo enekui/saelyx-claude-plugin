@@ -1,0 +1,28 @@
+{
+  "name": "saelyx",
+  "displayName": "Saelyx",
+  "version": "1.0.0",
+  "description": "Read-only access to your Saelyx meeting minutes, calendar, memory, documents, notes and chat history, with skills that teach Claude how to use it.",
+  "author": {
+    "name": "Saelyx",
+    "url": "https://saelyx.ai"
+  },
+  "homepage": "https://saelyx.ai",
+  "repository": "https://github.com/enekui/saelyx-claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "saelyx",
+    "meetings",
+    "meeting-minutes",
+    "action-items",
+    "calendar",
+    "notes",
+    "memory",
+    "knowledge-base",
+    "read-only"
+  ],
+  "documentationUrl": "https://saelyx.ai/en/docs/connectors/",
+  "supportUrl": "https://saelyx.ai/en/support/",
+  "privacyPolicyUrl": "https://saelyx.ai/en/privacy/",
+  "termsOfServiceUrl": "https://saelyx.ai/en/terms/"
+}

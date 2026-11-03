@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "saelyx": {
+      "type": "http",
+      "url": "https://mcp.saelyx.ai/mcp"
+    }
+  }
+}
