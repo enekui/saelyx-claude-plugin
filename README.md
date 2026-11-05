@@ -10,7 +10,7 @@ Let Claude read your Saelyx meeting minutes, calendar, memory, documents, notes 
 
 - **The Saelyx connector.** `.mcp.json` points to `https://mcp.saelyx.ai/mcp`, the same server as the Saelyx connector in Claude's directory. If you have both, Claude still sees one set of tools.
 - **Five skills** that tell Claude when to reach for Saelyx and how to do it well.
-- **Five commands for Claude Code.** `/saelyx:meeting`, `/saelyx:agenda`, `/saelyx:action-items`, `/saelyx:weekly-recap` and `/saelyx:search` run the most common jobs with one short command. They are plain text instructions, like the skills.
+- **Five commands for Claude Code.** `/saelyx:meeting`, `/saelyx:calendar`, `/saelyx:action-items`, `/saelyx:weekly-recap` and `/saelyx:find` run the most common jobs with one short command. They are plain text instructions, like the skills.
 - **Nothing else.** No agents, hooks or scripts. The plugin runs no code on your machine.
 
 | Skill | Ask things like | Tools it uses |
@@ -78,10 +78,10 @@ Once installed, the plugin also adds five commands to Claude Code. They are shor
 | Command | What it does |
 |---|---|
 | `/saelyx:meeting <what to look for>` | Finds a meeting by topic, person or date and returns its summary, decisions and action items. |
-| `/saelyx:agenda [today\|tomorrow\|week\|next]` | Reads your calendar and prepares the next meeting from earlier minutes and notes. |
+| `/saelyx:calendar [today\|tomorrow\|week\|next]` | Reads your calendar and prepares the next meeting from earlier minutes and notes. |
 | `/saelyx:action-items [person or period]` | Lists the action items raised in recent minutes, grouped by owner. |
 | `/saelyx:weekly-recap [week]` | Gives a summary of the week's meetings, decisions and pending items, ready to paste. |
-| `/saelyx:search <question>` | Searches minutes, notes, documents and memory. Chat history and Ask Saelyx only when needed; Ask Saelyx uses one of your daily chat messages. |
+| `/saelyx:find <question>` | Searches minutes, notes, documents and memory. Chat history and Ask Saelyx only when needed; Ask Saelyx uses one of your daily chat messages. |
 
 ### Try it from this repository
 
@@ -143,7 +143,7 @@ With the plugin installed you do not need that command.
 **Saelyx para Claude** conecta Claude con tu cuenta de Saelyx para que pueda leer tus actas de reuniones, tu agenda (Outlook / Microsoft 365), lo que Saelyx recuerda de ti, tus documentos, tus notas y tu historial de chat con Saelyx. Solo lectura: no crea, cambia ni borra nada. Incluye el conector de Saelyx y cinco skills que enseñan a Claude a usarlo.
 
 - **Instalar.** Sigue los pasos de la sección Install; las pantallas de Claude pueden salir en tu idioma. Hace falta una cuenta de Saelyx. Mientras el plugin entra en el directorio de Claude, puedes usarlo desde este repositorio.
-- **Comandos.** En Claude Code, el plugin añade cinco comandos de barra: `/saelyx:meeting`, `/saelyx:agenda`, `/saelyx:action-items`, `/saelyx:weekly-recap` y `/saelyx:search`. Hacen los trabajos más comunes con una sola orden, son de solo lectura y no ejecutan código.
+- **Comandos.** En Claude Code, el plugin añade cinco comandos de barra: `/saelyx:meeting`, `/saelyx:calendar`, `/saelyx:action-items`, `/saelyx:weekly-recap` y `/saelyx:find`. Hacen los trabajos más comunes con una sola orden, son de solo lectura y no ejecutan código.
 - **Permisos.** Tú eliges, casilla a casilla, qué puede leer Claude en la pantalla de permisos de Saelyx ([saelyx.ai/conectar](https://saelyx.ai/conectar/)). Tu historial de chat y preguntar a Saelyx vienen sin marcar.
 - **Revocar.** En tu cuenta de Saelyx en la web, abre **Conectores**, pulsa **Quitar acceso** junto a Claude y confirma con **¿Seguro? Quitar**.
 - **Ayuda.** [info@saelyx.ai](mailto:info@saelyx.ai).
