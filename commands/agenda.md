@@ -9,12 +9,11 @@ Tool names below are the connector's own; your client may show them with a prefi
 
 ## Steps
 
-1. Call `saelyx_get_agenda`. With no argument, use today.
+1. Call `saelyx_get_agenda`, passing the user's IANA `timezone` when you know it (the default is Europe/Madrid). With no argument, use today.
    - `today`: `window` today.
    - `tomorrow`: `window` tomorrow.
    - `week`: `window` week (Monday to Sunday). `next week`: `window` week and `next` true.
    - `next`: `window` today and `next` true. It looks ahead from now for about a week, so the first event is the next meeting even if it is days away.
-   Pass the user's IANA `timezone` when you know it; the default is Europe/Madrid.
 2. Read the result. Each event has `title`, `start`, `end`, `all_day`, `location`, `organizer` and `online_meeting_url`. There is no attendee list and no description, so never guess who is invited. Convert ISO-8601 times, which may be UTC, to the user's timezone.
    - `truncated` true: some events were left out. Say so and offer a narrower window.
    - `events` and `providers_connected` both empty: no calendar is available through the connector. Say that, relay `message` if there is one, and never say the day is free. A calendar listed in `providers_errored` could not be read just now, so suggest trying again.
