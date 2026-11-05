@@ -10,7 +10,8 @@ Let Claude read your Saelyx meeting minutes, calendar, memory, documents, notes 
 
 - **The Saelyx connector.** `.mcp.json` points to `https://mcp.saelyx.ai/mcp`, the same server as the Saelyx connector in Claude's directory. If you have both, Claude still sees one set of tools.
 - **Five skills** that tell Claude when to reach for Saelyx and how to do it well.
-- **Nothing else.** No commands, agents, hooks or scripts. The plugin runs no code on your machine.
+- **Five commands for Claude Code.** `/saelyx:meeting`, `/saelyx:agenda`, `/saelyx:action-items`, `/saelyx:weekly-recap` and `/saelyx:search` run the most common jobs with one short command. They are plain text instructions, like the skills.
+- **Nothing else.** No agents, hooks or scripts. The plugin runs no code on your machine.
 
 | Skill | Ask things like | Tools it uses |
 |---|---|---|
@@ -20,7 +21,7 @@ Let Claude read your Saelyx meeting minutes, calendar, memory, documents, notes 
 | `search` | "What do you know about the budget review?" "What did I tell Saelyx about my schedule?" | All of the above, plus `saelyx_search_conversation` and `saelyx_ask` |
 | `troubleshooting` | "Is Saelyx connected?" "Which account is this?" A permission or limit message. | `saelyx_ping`, `saelyx_whoami`, `saelyx_get_account_status` |
 
-In Claude Code the skills appear as `/saelyx:meetings`, `/saelyx:agenda` and so on. In chat, type `/` and pick one, or just ask: Claude loads the right skill when your request matches it.
+In Claude Code the skills appear as `/saelyx:meetings`, `/saelyx:notes-memory-documents` and so on. In chat, type `/` and pick one, or just ask: Claude loads the right skill when your request matches it.
 
 ## What Claude can read
 
@@ -72,6 +73,16 @@ Once the plugin is listed in the directory:
 1. Run `/plugin directory` (Claude Code 2.1.287 or later), select Saelyx and install it. A plugin you added on claude.ai also arrives by itself at the next session start; run `/reload-plugins` to load it.
 2. Run `/mcp`, select `saelyx` and choose **Authenticate**. A browser window opens on the same Saelyx consent screen.
 
+Once installed, the plugin also adds five commands to Claude Code. They are shortcuts for the most common jobs, and they only read Saelyx:
+
+| Command | What it does |
+|---|---|
+| `/saelyx:meeting <what to look for>` | Finds a meeting by topic, person or date and returns its summary, decisions and action items. |
+| `/saelyx:agenda [today\|tomorrow\|week\|next]` | Reads your calendar and prepares the next meeting from earlier minutes and notes. |
+| `/saelyx:action-items [person or period]` | Lists the action items raised in recent minutes, grouped by owner. |
+| `/saelyx:weekly-recap [week]` | Gives a summary of the week's meetings, decisions and pending items, ready to paste. |
+| `/saelyx:search <question>` | Searches minutes, notes, documents and memory. Chat history and Ask Saelyx only when needed; Ask Saelyx uses one of your daily chat messages. |
+
 ### Try it from this repository
 
 This repository is also a one-plugin marketplace, so Claude Code can install the plugin straight from it. In a session (Claude Code 2.1.275 or later):
@@ -110,7 +121,7 @@ With the plugin installed you do not need that command.
 
 - **You choose, checkbox by checkbox.** On the consent screen at [saelyx.ai/conectar](https://saelyx.ai/conectar/) you tick what Claude may read. Nothing is shared until you approve. Your chat history and Ask Saelyx come unticked.
 - **Read-only.** Claude cannot create, change, send or delete anything in Saelyx.
-- **What this plugin does.** It ships text instructions (the skills) and one connector entry. It stores nothing, collects nothing and runs nothing on your machine. Data moves only when Claude calls a Saelyx tool, and only between Claude and `mcp.saelyx.ai`, with your own Saelyx sign-in. For the agenda, Saelyx reads your upcoming events from the Outlook / Microsoft 365 calendar you connected to it. Your calendar credentials stay in Saelyx, and the token Claude uses is never passed on.
+- **What this plugin does.** It ships text instructions (the skills and the commands) and one connector entry. It stores nothing, collects nothing and runs nothing on your machine. Data moves only when Claude calls a Saelyx tool, and only between Claude and `mcp.saelyx.ai`, with your own Saelyx sign-in. For the agenda, Saelyx reads your upcoming events from the Outlook / Microsoft 365 calendar you connected to it. Your calendar credentials stay in Saelyx, and the token Claude uses is never passed on.
 - **What Claude receives.** The results of a tool call become part of your conversation in Claude and stay there.
 - **Never available.** Raw meeting transcripts; photos, faces, voice or other biometric data; your billing and security settings; the credentials of the services you connected to Saelyx.
 - **Access history.** Saelyx keeps a record of each connector access (which connection, tool and permission, when, how long it took and how big the answer was) for up to 90 days, without the content. The details are in section 13 of the [privacy policy](https://saelyx.ai/en/privacy/).
@@ -132,6 +143,7 @@ With the plugin installed you do not need that command.
 **Saelyx para Claude** conecta Claude con tu cuenta de Saelyx para que pueda leer tus actas de reuniones, tu agenda (Outlook / Microsoft 365), lo que Saelyx recuerda de ti, tus documentos, tus notas y tu historial de chat con Saelyx. Solo lectura: no crea, cambia ni borra nada. Incluye el conector de Saelyx y cinco skills que enseñan a Claude a usarlo.
 
 - **Instalar.** Sigue los pasos de la sección Install; las pantallas de Claude pueden salir en tu idioma. Hace falta una cuenta de Saelyx. Mientras el plugin entra en el directorio de Claude, puedes usarlo desde este repositorio.
+- **Comandos.** En Claude Code, el plugin añade cinco comandos de barra: `/saelyx:meeting`, `/saelyx:agenda`, `/saelyx:action-items`, `/saelyx:weekly-recap` y `/saelyx:search`. Hacen los trabajos más comunes con una sola orden, son de solo lectura y no ejecutan código.
 - **Permisos.** Tú eliges, casilla a casilla, qué puede leer Claude en la pantalla de permisos de Saelyx ([saelyx.ai/conectar](https://saelyx.ai/conectar/)). Tu historial de chat y preguntar a Saelyx vienen sin marcar.
 - **Revocar.** En tu cuenta de Saelyx en la web, abre **Conectores**, pulsa **Quitar acceso** junto a Claude y confirma con **¿Seguro? Quitar**.
 - **Ayuda.** [info@saelyx.ai](mailto:info@saelyx.ai).
