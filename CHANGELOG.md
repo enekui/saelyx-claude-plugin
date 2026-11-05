@@ -2,6 +2,20 @@
 
 All notable changes to this plugin are listed here. The format follows Keep a Changelog and the versions follow Semantic Versioning.
 
+## [1.1.0] - 2026-11-05
+
+### Added
+
+- Command `/saelyx:meeting`: find a meeting by topic, person or date and get its summary, decisions and action items.
+- Command `/saelyx:agenda`: read today, tomorrow, this week or the next meeting from the connected calendar, and prepare the next meeting from earlier minutes and notes.
+- Command `/saelyx:action-items`: list the action items raised in recent minutes, grouped by owner, with the meeting and date each one comes from.
+- Command `/saelyx:weekly-recap`: a weekly summary of meetings, decisions and pending items, ready to paste.
+- Command `/saelyx:search`: search minutes, notes, documents and memory, and use chat history or Ask Saelyx only when needed.
+
+### Changed
+
+- The directory icon is re-encoded without metadata (#1, merged before this release).
+
 ## [1.0.0] - 2026-11-03
 
 First release.
