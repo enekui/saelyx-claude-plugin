@@ -1,8 +1,8 @@
 {
   "name": "saelyx",
   "displayName": "Saelyx",
-  "version": "1.0.0",
-  "description": "Read-only access to your Saelyx meeting minutes, calendar, memory, documents, notes and chat history, with skills that teach Claude how to use it.",
+  "version": "1.1.0",
+  "description": "Read-only access to your Saelyx meeting minutes, calendar, memory, documents, notes and chat history, with skills that teach Claude how to use it. Includes slash commands for Claude Code.",
   "author": {
     "name": "Saelyx",
     "url": "https://saelyx.ai"
@@ -19,7 +19,8 @@
     "notes",
     "memory",
     "knowledge-base",
-    "read-only"
+    "read-only",
+    "claude-code"
   ],
   "documentationUrl": "https://saelyx.ai/en/docs/connectors/",
   "supportUrl": "https://saelyx.ai/en/support/",
